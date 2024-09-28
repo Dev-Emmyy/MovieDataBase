@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+}
+
+
+.color_mode {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    width: 120px;
+}
+
+.display {
+    display: block;
+}
+
+.noDisplay {
+    display: none;
+}
+
+#heading {
+    color : #ff206e;
+}
+
+#movies_light {
+    color: #fff;
+}
+
+
+#movies {
+    color: #ee9800;
+}
+
+.input_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.input_section input {
+    border: none;
+    outline: none;
+    padding: .7rem;
+    width: 400px;
+    border-radius: .6rem;
+}
+
+#search {
+    position:absolute;
+    margin-left: 24rem;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+
+
+@media screen and (max-width: 789px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav {
+        background-color: black;
+        color: aliceblue;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        max-width: 100%;
+        /* Ensures nav doesn't stretch */
+    }
+
+    .nav_link h1 {
+        font-size: 0.9rem;
+        /* Slightly bigger than before for readability */
+        margin-right: 1rem;
+        /* Remove unwanted margin */
+        padding: 0;
+        /* Remove unwanted padding */
+    }
+
+    .color_mode {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        /* Adds space between the elements for clarity */
+    }
+
+    .color_mode h3 {
+        font-size: 0.8rem;
+        margin: 0;
+        /* Ensures text isn't too large or spaced out */
+    }
+
+    #mode {
+        font-size: 12px;
+        display: none;
+        /* Hides the mode option for mobile views */
+    }
+
+    .input_section {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .input_section input {
+        border: none;
+        outline: none;
+        padding: 0.3rem;
+        width: 120px;
+        border-radius: 1rem;
+        /* Adds slight spacing from surrounding elements */
+    }
+
+    #search {
+        display: none;
+        /* Hide search on smaller screens */
+    }
+}
