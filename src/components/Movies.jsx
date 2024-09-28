@@ -5,6 +5,8 @@ import Noimg from "./no img.jpg";
 import "../Styles/Video.css";
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 // Custom Alert component
 const CustomAlert = ({ message, onClose }) => (
@@ -28,6 +30,24 @@ const CustomAlert = ({ message, onClose }) => (
     }}>×</button>
   </div>
 );
+
+// Skeleton Component for Movie Card
+const MovieSkeleton = () => {
+  return (
+    <div className="container">
+      <SkeletonTheme color="#202020" highlightColor="#444">
+        <div style={{ position: "relative" }}>
+          <Skeleton height={300} width={200} />
+          <div style={{ position: "absolute", top: "10px", left: "10px" }}>
+            <Skeleton circle={true} height={40} width={40} />
+          </div>
+        </div>
+        <Skeleton width={200} height={24} style={{ marginTop: "10px" }} />
+        <Skeleton width={150} height={20} />
+      </SkeletonTheme>
+    </div>
+  );
+};
 
 function Movies({ id }) {
   const { toggle, inputValue } = useContext(Container);
@@ -98,7 +118,14 @@ function Movies({ id }) {
   return (
     <Fragment>
       {loading ? (
-        <div className="loading-spinner"></div>
+        <div className={toggle ? "mainBgColor" : "secondaryBgColor"}>
+          {/* Show 8 skeletons while loading */}
+          <div className="movie_container">
+            {[...Array(8)].map((_, index) => (
+              <MovieSkeleton key={index} />
+            ))}
+          </div>
+        </div>
       ) : (
         <div className={toggle ? "mainBgColor" : "secondaryBgColor"}>
           {error && (
