@@ -123,11 +123,12 @@ nav a {
     .input_section input {
         border: none;
         outline: none;
-        padding: 0.3rem;
+        padding: .3rem;
         width: 120px;
         border-radius: 1rem;
-        /* Adds slight spacing from surrounding elements */
     }
+
+
 
     #search {
         display: none;
