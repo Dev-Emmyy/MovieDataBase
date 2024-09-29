@@ -91,7 +91,6 @@ function Details() {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               height: "1000px",
-              backgroundPosition: "left calc((50vw - 170px) - 340px) top",
             }}
           >
             <div id="details_container">
