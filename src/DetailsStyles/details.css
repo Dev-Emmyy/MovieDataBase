@@ -141,7 +141,6 @@ h2 span {
 
     html,
     body {
-        overflow-y: hidden;
         position: relative;
     }
 

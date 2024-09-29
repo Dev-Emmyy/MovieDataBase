@@ -140,11 +140,8 @@ function Movies({ id }) {
                 <div className="container">
                   <AiFillPlayCircle color="green" fontSize={40} id="playicon" />
                   <img src={movie.poster_path ? `${Images}${movie.poster_path}` : Noimg} alt="movie poster" />
-                  <h4
-                    id={movie.title.length < 28 ? "" : "smallertext"}
-                    className={toggle ? "mainColor" : "secondaryColor"}
-                  >
-                    {movie.title} ({new Date(movie.releaseDate).getFullYear()})
+                  <h4 id={movie.title.length < 28 ? "" : "smallertext"} className={toggle ? "mainColor" : "secondaryColor"}>
+                    {movie.title}
                   </h4>
                 </div>
               </Link>
